@@ -11,7 +11,7 @@
             <div class="forecast-container">
                 <div class="today forecast">
                     <div class="forecast-header">
-                        <div class="day">{{date}}</div>
+                        <div class="day">{{date}}  |   {{current_time}}</div>
                         <div class="date">{% now "l" %}</div>
                     </div> <!-- .forecast-header -->
                     <div class="forecast-content">
@@ -20,7 +20,7 @@
                             <div class="degree">
                                 <div class="num">{{temp}}<sup>o</sup>C</div>
                                 <div class="forecast-icon">
-                                    <img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" alt="" width=90>
+                                    <img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" alt="" width=150>
                                 </div>
                             </div>
                             <div class="description">
@@ -29,21 +29,44 @@
                         </div>
                         
                         <div class="middle-section">
-                            <span><img style="height: 40px; width: 40px; margin-right: 20px;" src="{%static 'images/cloud.png' %}" alt="">{{cloud}}%</span>
-                            <span><img style="height: 30px; width: 30px; margin-right: 30px;" src="{%static 'images/icon-wind.png' %}" alt="">{{wind}}km/h</span>
-                            <span><img style="height: 30px; width: 30px; margin-right: 30px;"src="{%static 'images/icon-compass.png' %}" alt="degree">{{degree}}<sup> o</sup></span>
-                            <span><img style="height: 30px; width: 30px; margin-right: 30px;" src="{%static 'images/hot.png' %}" alt="status">{{status|capfirst }}</span>
-                            <span><img style="height: 30px; width: 30px; margin-right: 30px;" src="{%static 'images/humidity.png' %}" alt="">{{humidity}}</span>
-
+                            <span>
+                              <div class="circle-wrapper">
+                                <img src="{%static 'images\cloud.png' %}" alt="cloud">
+                              </div>
+                              {{cloud}}%
+                            </span>
+                            <span>
+                              <div class="circle-wrapper">
+                                <img src="{%static 'images/pressure.png' %}" alt="wind">
+                              </div>
+                              {{wind}} km/h
+                            </span>
+                            <span>
+                              <div class="circle-wrapper">
+                                <img src="{%static 'images/sunrise.png' %}" alt="degree">
+                              </div>
+                              {{sunrise}}
+                            </span>
+                            <span>
+                              <div class="circle-wrapper">
+                                <img src="{%static 'images/degree.png' %}" alt="status">
+                              </div>
+                              {{degree}}°
+                            </span>
+                            <span>
+                              <div class="circle-wrapper">
+                                <img src="{%static 'images/humidity.png' %}" alt="humidity">
+                              </div>
+                              {{humidity}}%
+                            </span>
+                            <span>
+                              <div class="circle-wrapper">
+                                <img src="{%static 'images/sunset.png' %}" alt="sunrise">
+                              </div>
+                              {{sunset}}
+                            </span>
                         </div>
-                        
-                        <div class="right-section">
-                            <p>Feels Like: {{ feels_like }}°C</p>
-                            <p>DT: {{ dt }}</p>
-                            <p>Min:{{temp_min1}}</p>
-                            <p>Max:{{temp_max1}}</p>
-                        </div>
-
+                          
                     </div>
                 </div>
                 
@@ -61,10 +84,11 @@
                 <div class="forecast">
                     <div class="forecast-header">
                         <div class="day">{{day1}}</div>
+                        <div class="forcast-date">{{date1}}</div>
                     </div> <!-- .forecast-header -->
                     <div class="forecast-content">
                         <div class="forecast-icon">
-                            <img src="http://openweathermap.org/img/wn/{{icon1}}@2x.png" alt="" width=48>
+                            <img src="http://openweathermap.org/img/wn/{{icon1}}@2x.png" alt="" width=50>
                         </div>
                         <div class="degree">{{temp_max1}}<sup>o</sup>C</div>
                         <small>{{temp_min1}}<sup>o</sup></small>
@@ -73,10 +97,11 @@
                 <div class="forecast">
                     <div class="forecast-header">
                         <div class="day">{{day2}}</div>
+                        <div class="forcast-date">{{date2}}</div>
                     </div> <!-- .forecast-header -->
                     <div class="forecast-content">
                         <div class="forecast-icon">
-                            <img src="http://openweathermap.org/img/wn/{{icon2}}@2x.png" alt="" width=48>
+                            <img src="http://openweathermap.org/img/wn/{{icon2}}@2x.png" alt="" width=50>
                         </div>
                         <div class="degree">{{temp_max2}}<sup>o</sup>C</div>
                         <small>{{temp_min2}}<sup>o</sup></small>
@@ -85,10 +110,11 @@
                 <div class="forecast">
                     <div class="forecast-header">
                         <div class="day">{{day3}}</div>
+                        <div class="forcast-date">{{date3}}</div>
                     </div> <!-- .forecast-header -->
                     <div class="forecast-content">
                         <div class="forecast-icon">
-                            <img src="http://openweathermap.org/img/wn/{{icon3}}@2x.png" alt="" width=48>
+                            <img src="http://openweathermap.org/img/wn/{{icon3}}@2x.png" alt="" width=50>
                         </div>
                         <div class="degree">{{temp_max3}}<sup>o</sup>C</div>
                         <small>{{temp_min3}}<sup>o</sup></small>
@@ -97,10 +123,11 @@
                 <div class="forecast">
                     <div class="forecast-header">
                         <div class="day">{{day4}}</div>
+                        <div class="forcast-date">{{date4}}</div>
                     </div> <!-- .forecast-header -->
                     <div class="forecast-content">
                         <div class="forecast-icon">
-                            <img src="http://openweathermap.org/img/wn/{{icon4}}@2x.png" alt="" width=48>
+                            <img src="http://openweathermap.org/img/wn/{{icon4}}@2x.png" alt="" width=50>
                         </div>
                         <div class="degree">{{temp_max4}}<sup>o</sup>C</div>
                         <small>{{temp_min4}}<sup>o</sup></small>
@@ -109,10 +136,11 @@
                 <div class="forecast">
                     <div class="forecast-header">
                         <div class="day">{{day5}}</div>
+                        <div class="forcast-date">{{date5}}</div>
                     </div> <!-- .forecast-header -->
                     <div class="forecast-content">
                         <div class="forecast-icon">
-                            <img src="http://openweathermap.org/img/wn/{{icon5}}@2x.png" alt="" width=48>
+                            <img src="http://openweathermap.org/img/wn/{{icon5}}@2x.png" alt="" width=50>
                         </div>
                         <div class="degree">{{temp_max5}}<sup>o</sup>C</div>
                         <small>{{temp_min5}}<sup>o</sup></small>
@@ -121,10 +149,11 @@
                 <div class="forecast">
                     <div class="forecast-header">
                         <div class="day">{{day6}}</div>
+                        <div class="forcast-date">{{date6}}</div>
                     </div> <!-- .forecast-header -->
                     <div class="forecast-content">
                         <div class="forecast-icon">
-                            <img src="http://openweathermap.org/img/wn/{{icon6}}@2x.png" alt="" width=48>
+                            <img src="http://openweathermap.org/img/wn/{{icon6}}@2x.png" alt="" width=50>
                         </div>
                         <div class="degree">{{temp_max6}}<sup>o</sup>C</div>
                         <small>{{temp_min6}}<sup>o</sup></small>

@@ -42,7 +42,7 @@
         </div>
       </div> <!-- .site-header -->
 
-      <div class="hero" data-bg-image="{% static 'images/banner.png' %}">
+      <div class="hero" data-bg-image="{% static '\images\sky.jpg' %}">
         <div class="container">
           <form action="{%url 'result'%}" class="find-location" method="post">
             {% csrf_token%}
@@ -56,12 +56,6 @@
 
         {% endblock content %}
 
-      <!--<footer class="site-footer">
-        <div class="container">
-
-          <p class="colophon">Copyright 2024, All rights reserved</p>
-        </div>
-      </footer>--> <!-- .site-footer -->
     </div>
 
     <script src="{%static 'js/jquery-1.11.1.min.js' %}"></script>
